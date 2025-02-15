@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image Slider</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgba(245, 239, 239, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .slider-container {
+            width: 90%;
+            max-width: 1200px;
+        }
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width:50%;
+            height: 400px;
+            transition: transform 0.30s ease-in-out;
+            opacity: 0.5;
+            transform: scale(0.8);
+              border-radius: 20px;
+        }
+        .swiper-slide-active {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slider-container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url('file:///F:/slider_images/beautiful-strawberry-garden-sunrise-doi-ang-khang-chiang-mai-thailand.jpg');"></div>
+                <div class="swiper-slide" style="background-image: url('file:///F:/slider_images/aerial-view-beautiful-sky-road-top-mountains-with-green-jungle-nan-province-thailand.jpg');"></div>
+                <div class="swiper-slide" style="background-image: url('file:///F:/slider_images/seoraksan-mountains-is-covered-by-morning-fog-sunrise-seoul-korea.jpg');"></div>
+                <div class="swiper-slide" style="background-image: url('file:///F:/slider_images/woman-wearing-hill-tribe-dress-strawberry-garden-doi-ang-khang-chiang-mai-thailand.jpg');"></div>
+               
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            spaceBetween: 10,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+</body>
+</html>
